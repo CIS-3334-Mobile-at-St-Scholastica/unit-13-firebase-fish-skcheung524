@@ -28,12 +28,12 @@ public class FishFirebaseData {
 
     public Fish createFish( String species, String weightInOz, String dateCaught) {           //Added String rating as a parameter
         // ---- Get a new database key for the vote
-//        String key = myFishDbRef.child(FishDataTag).push().getKey();
-        String key = "REPLACE THIS WITH KEY FROM DATABASE";
+        String key = myFishDbRef.child(FishDataTag).push().getKey();
+//        String key = "REPLACE THIS WITH KEY FROM DATABASE";
         // ---- set up the fish object
         Fish newFish = new Fish(key, species, weightInOz, dateCaught);
         // ---- write the vote to Firebase
-//        myFishDbRef.child(key).setValue(newFish);
+        myFishDbRef.child(key).setValue(newFish);
         return newFish;
     }
 
